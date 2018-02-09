@@ -5,6 +5,20 @@
 <title>Insert title here</title>
 </head>
 <body>
-Hello world
+<div>
+	<div>
+		<img style="float:left;margin:0 20px 20px 20px;" src="" th:src="${url}"  width="190" height="300"/>
+	</div>
+	<div>
+		<select>
+			<option>-</option>
+			<option th:each="brewery:${breweries}" th:text="${brewery}"></option>
+		</select>
+		<select>
+			<option>-</option>
+			<option th:each="beer:${beers}" th:text="${beer}"></option>
+		</select>
+	</div>
+</div>
 </body>
 </html>
