@@ -7,6 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import com.example.demo.model.Beer;
+import com.example.demo.model.Brewery;
+
 @Controller
 public class BeerGameController {
 
@@ -18,15 +21,21 @@ public class BeerGameController {
 		return "beer-game";
 	}
 	
-	private List<String> createBreweryList() {
-		List<String> list = new ArrayList<>();
-		list.add("ヴァンスティーンベルグ醸造所");
-		return list;		
+	private List<Brewery> createBreweryList() {
+		List<Brewery> list = new ArrayList<>();
+		Brewery brewery = new Brewery();
+		brewery.setId(1);
+		brewery.setName("ヴァンスティーンベルグ醸造所");
+		list.add(brewery);
+		return list;	
 	}
 	
-	private List<String> createBeerList() {
-		List<String> list = new ArrayList<>();
-		list.add("セリスホワイト");
+	private List<Beer> createBeerList() {
+		List<Beer> list = new ArrayList<>();
+		Beer beer = new Beer();
+		beer.setId(1);
+		beer.setName("セリスホワイト");
+		list.add(beer);
 		return list;		
 	}
 }
