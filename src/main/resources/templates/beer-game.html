@@ -12,11 +12,11 @@
 	<div>
 		<select>
 			<option>-</option>
-			<option th:each="brewery:${breweries}" th:text="${brewery}"></option>
+			<option th:each="brewery:${breweries}" th:value="${brewery.getId()}" th:text="${brewery.getName()}"></option>
 		</select>
 		<select>
 			<option>-</option>
-			<option th:each="beer:${beers}" th:text="${beer}"></option>
+			<option th:each="beer:${beers}" th:value="${beer.getId()}" th:text="${beer.getName()}"></option>
 		</select>
 	</div>
 </div>
