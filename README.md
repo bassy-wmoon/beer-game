@@ -8,12 +8,12 @@
 - MySQL5.6 +
 
 ## Preparation
-### create database
+### 1. Create database
 ```
 create database beer_game;
 ```
 
-### flyway migrate
+### 2. Flyway migrate
 ```
 ./mvnw flyway:migrate -P flyway
 ```
