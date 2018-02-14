@@ -1,0 +1,12 @@
+insert into beer_styles (beer_style_id, name) values (1, 'White');
+insert into beer_styles (beer_style_id, name) values (2, 'Golden');
+insert into beer_styles (beer_style_id, name) values (3, 'Tripel');
+insert into beer_styles (beer_style_id, name) values (4, 'Blonde');
+insert into beer_styles (beer_style_id, name) values (5, 'Amber');
+insert into beer_styles (beer_style_id, name) values (6, 'Dubbel');
+insert into beer_styles (beer_style_id, name) values (7, 'Christmas');
+insert into beer_styles (beer_style_id, name) values (8, 'Trappist');
+insert into beer_styles (beer_style_id, name) values (9, 'Red');
+insert into beer_styles (beer_style_id, name) values (10, 'Lambic');
+insert into beer_styles (beer_style_id, name) values (11, 'Seasonal');
+insert into beer_styles (beer_style_id, name) values (12, 'Fruits');
