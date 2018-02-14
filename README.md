@@ -5,7 +5,6 @@
 
 # Requirement
 - Java8 +
-- Maven3 +
 - MySQL5.6 +
 
 # Preparation
