@@ -5,14 +5,14 @@
 
 <mapper namespace="com.example.demo.repository.BeerPhotoRepository">
     <select id="selectAll" resultType="com.example.demo.model.BeerPhoto">
-        select 
+        SELECT 
             beer_photo_id as id,
             url,
             width,
             height 
-        from 
+        FROM 
             beer_photos 
-        order by
-            beer_photo_id;
+        ORDER BY
+            beer_photo_id
     </select>
 </mapper>
