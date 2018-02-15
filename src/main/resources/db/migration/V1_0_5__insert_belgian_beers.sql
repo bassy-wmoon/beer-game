@@ -13,7 +13,7 @@ insert into belgian_beers (brewery_id, beer_id) values ((select brewery_id from 
 insert into belgian_beers (brewery_id, beer_id) values ((select brewery_id from breweries where name = 'ルル醸造所'), (select beer_id from beers where name = 'ルル・トリプル'));
 insert into belgian_beers (brewery_id, beer_id) values ((select brewery_id from breweries where name = 'デ・ランケ醸造所'), (select beer_id from beers where name = 'グーデンベルグ'));
 insert into belgian_beers (brewery_id, beer_id) values ((select brewery_id from breweries where name = 'デ・ラ・セーヌ醸造所'), (select beer_id from beers where name = 'タラス・ブルバ'));
-insert into belgian_beers (brewery_id, beer_id) values ((select brewery_id from breweries where name = 'ヴァン・スティンベルグ醸造所'), (select beer_id from beers where name = 'ズウィンジー'));
+insert into belgian_beers (brewery_id, beer_id) values ((select brewery_id from breweries where name = 'ヴァン・スティーンベルグ醸造所'), (select beer_id from beers where name = 'ズウィンジー'));
 insert into belgian_beers (brewery_id, beer_id) values ((select brewery_id from breweries where name = 'デ・ラ・セーヌ醸造所'), (select beer_id from beers where name = 'ジネビア'));
 insert into belgian_beers (brewery_id, beer_id) values ((select brewery_id from breweries where name = 'コントレラス醸造所'), (select beer_id from beers where name = 'ヴァレイル・エクストラ'));
 insert into belgian_beers (brewery_id, beer_id) values ((select brewery_id from breweries where name = 'カラコル醸造所'), (select beer_id from beers where name = 'カラコル・サクソー'));
