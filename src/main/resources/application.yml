@@ -4,3 +4,12 @@ spring:
     url: jdbc:mysql://localhost:33306/beer_game
     username: root
     password:
+  thymeleaf:
+    mode: HTML5
+    cache: false
+
+mybatis:
+  configuration:
+    useColumnLabel: true
+    mapUnderscoreToCamelCase: true
+  mapper-locations: mybatis/mapper/*.xml
