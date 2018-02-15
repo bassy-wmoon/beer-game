@@ -27,31 +27,15 @@ public class BelgianBeerController {
 	public String index(Model model) {
 		
 		BeerPhoto beerPhoto = belgianBeerService.selectOne();
+		List<Brewery> breweries = belgianBeerService.selectAllBreweries();
+		List<Beer> beers = belgianBeerService.selectAllBeers();
 		
 		model.addAttribute("beerPhotoId", beerPhoto.getId());
 		model.addAttribute("url", beerPhoto.getUrl());
 		model.addAttribute("width", beerPhoto.getWidth());
 		model.addAttribute("height", beerPhoto.getHeight());
-		model.addAttribute("breweries", createBreweryList());
-		model.addAttribute("beers", createBeerList());
+		model.addAttribute("breweries", breweries);
+		model.addAttribute("beers", beers);
 		return "beer-game";
-	}
-	
-	private List<Brewery> createBreweryList() {
-		List<Brewery> list = new ArrayList<>();
-		Brewery brewery = new Brewery();
-		brewery.setId(1);
-		brewery.setName("ヴァンスティーンベルグ醸造所");
-		list.add(brewery);
-		return list;	
-	}
-	
-	private List<Beer> createBeerList() {
-		List<Beer> list = new ArrayList<>();
-		Beer beer = new Beer();
-		beer.setId(1);
-		beer.setName("セリスホワイト");
-		list.add(beer);
-		return list;		
 	}
 }
