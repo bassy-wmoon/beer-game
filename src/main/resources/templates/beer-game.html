@@ -6,19 +6,23 @@
 </head>
 <body>
 <div>
-	<div>
-		<img style="float:left;margin:0 20px 20px 20px;" src="" th:src="${url}"  width="190" height="300"/>
+	<div id="beer_photo">
+		<img style="float:left;margin:0 20px 20px 20px;" src="" th:src="${url}"  width="${width}" height="${height}"/>
 	</div>
 	<div>
-		<select>
+		<select id="brewery" onchange="findBeersByBrewery()">
 			<option>-</option>
 			<option th:each="brewery:${breweries}" th:value="${brewery.getId()}" th:text="${brewery.getName()}"></option>
 		</select>
-		<select>
+		<select id="beer">
 			<option>-</option>
-			<option th:each="beer:${beers}" th:value="${beer.getId()}" th:text="${beer.getName()}"></option>
 		</select>
 	</div>
 </div>
 </body>
+<script
+  src="http://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<script src="../js/beer-game.js"></script>
 </html>

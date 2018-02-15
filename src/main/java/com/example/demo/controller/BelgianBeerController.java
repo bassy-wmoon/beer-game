@@ -1,14 +1,11 @@
 package com.example.demo.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.example.demo.model.Beer;
 import com.example.demo.model.BeerPhoto;
 import com.example.demo.model.Brewery;
 import com.example.demo.service.BelgianBeerService;
@@ -18,7 +15,6 @@ public class BelgianBeerController {
 
 	private BelgianBeerService belgianBeerService;
 
-	@Autowired
 	public BelgianBeerController(BelgianBeerService belgianBeerService) {
 		this.belgianBeerService = belgianBeerService;
 	}
@@ -28,14 +24,12 @@ public class BelgianBeerController {
 		
 		BeerPhoto beerPhoto = belgianBeerService.selectOne();
 		List<Brewery> breweries = belgianBeerService.selectAllBreweries();
-		List<Beer> beers = belgianBeerService.selectAllBeers();
 		
 		model.addAttribute("beerPhotoId", beerPhoto.getId());
 		model.addAttribute("url", beerPhoto.getUrl());
 		model.addAttribute("width", beerPhoto.getWidth());
 		model.addAttribute("height", beerPhoto.getHeight());
 		model.addAttribute("breweries", breweries);
-		model.addAttribute("beers", beers);
 		return "beer-game";
 	}
 }
