@@ -37,4 +37,8 @@ public class BelgianBeerService {
 	public List<Beer> selectAllBeers() {
 		return beerRepository.selectAll();
 	}
+	
+	public List<Beer> selectBeersByBrewery(int breweryId) {
+		return beerRepository.selectByBrewery(breweryId);
+	}
 }

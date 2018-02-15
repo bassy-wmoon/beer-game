@@ -13,4 +13,18 @@
         ORDER BY
             beer_id
     </select>
+    <select id="selectByBrewery" resultType="com.example.demo.model.Beer">
+        SELECT
+            beers.beer_id as id,
+            beers.name
+        FROM
+            belgian_beers belgian 
+            JOIN 
+          beers beers
+            ON belgian.beer_id = beers.beer_id
+        WHERE
+            belgian.brewery_id = #{breweryId}
+        ORDER BY
+            beers.beer_id;
+    </select>
 </mapper>
