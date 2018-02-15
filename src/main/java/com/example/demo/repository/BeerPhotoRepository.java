@@ -11,7 +11,5 @@ import com.example.demo.model.BeerPhoto;
 @Repository
 public interface BeerPhotoRepository {
 
-	BeerPhoto selectOne();
-	
 	List<BeerPhoto> selectAll();
 }

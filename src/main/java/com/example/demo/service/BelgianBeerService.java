@@ -27,10 +27,6 @@ public class BelgianBeerService {
 		this.beerRepository = beerRepository;
 	}
 	
-	public BeerPhoto selectOne() {
-		return beerPhotoRepository.selectOne();
-	}
-	
 	public List<BeerPhoto> selectShuffledBeerPhotos() {
 		List<BeerPhoto> list = beerPhotoRepository.selectAll();
 		Collections.shuffle(list);
