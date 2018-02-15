@@ -1,16 +1,15 @@
 package com.example.demo.service;
 
-import com.example.demo.model.Beer;
-import com.example.demo.model.Brewery;
-import com.example.demo.repository.BeerRepository;
-import com.example.demo.repository.BreweryRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
+import com.example.demo.model.Beer;
 import com.example.demo.model.BeerPhoto;
+import com.example.demo.model.Brewery;
 import com.example.demo.repository.BeerPhotoRepository;
-
-import java.util.List;
+import com.example.demo.repository.BeerRepository;
+import com.example.demo.repository.BreweryRepository;
 
 @Service
 public class BelgianBeerService {
