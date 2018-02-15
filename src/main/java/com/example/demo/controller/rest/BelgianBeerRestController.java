@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.Beer;
+import com.example.demo.model.BeerPhoto;
 import com.example.demo.service.BelgianBeerService;
 
 @RestController
@@ -23,5 +24,10 @@ public class BelgianBeerRestController {
 	@GetMapping(path="/brewery/{breweryId}")
 	public List<Beer> findBeersbyBrewery(@PathVariable int breweryId) {
 		return belgianBeerService.selectBeersByBrewery(breweryId);
+	}
+	
+	@GetMapping(path="/beerPhoto/shuffle")
+	public List<BeerPhoto> getShuffledPhoto() {
+		return belgianBeerService.selectShuffledBeerPhotos();
 	}
 }

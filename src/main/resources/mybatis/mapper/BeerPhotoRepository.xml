@@ -14,4 +14,15 @@
             beer_photos 
         limit 1;
     </select>
+    <select id="selectAll" resultType="com.example.demo.model.BeerPhoto">
+        select 
+            beer_photo_id as id,
+            url,
+            width,
+            height 
+        from 
+            beer_photos 
+        order by
+            beer_photo_id;
+    </select>
 </mapper>
