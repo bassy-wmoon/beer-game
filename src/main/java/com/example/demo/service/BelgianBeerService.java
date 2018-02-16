@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -26,8 +27,10 @@ public class BelgianBeerService {
 		this.beerRepository = beerRepository;
 	}
 	
-	public BeerPhoto selectOne() {
-		return beerPhotoRepository.selectOne();
+	public List<BeerPhoto> selectShuffledBeerPhotos() {
+		List<BeerPhoto> list = beerPhotoRepository.selectAll();
+		Collections.shuffle(list);
+		return list;
 	}
 
 	public List<Brewery> selectAllBreweries() {

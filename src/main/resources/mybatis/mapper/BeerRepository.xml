@@ -25,6 +25,6 @@
         WHERE
             belgian.brewery_id = #{breweryId}
         ORDER BY
-            beers.beer_id;
+            beers.beer_id
     </select>
 </mapper>
