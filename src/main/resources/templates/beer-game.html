@@ -11,12 +11,15 @@
 	</div>
 	<div>
 		<select id="brewery" onchange="findBeersByBrewery()">
-			<option>-</option>
+			<option value="0">-</option>
 			<option th:each="brewery:${breweries}" th:value="${brewery.getId()}" th:text="${brewery.getName()}"></option>
 		</select>
 		<select id="beer">
-			<option>-</option>
+			<option value="0">-</option>
 		</select>
+	</div>
+	<div>
+	   <button id="answer" onclick="answer();">answer</button>
 	</div>
 </div>
 </body>
