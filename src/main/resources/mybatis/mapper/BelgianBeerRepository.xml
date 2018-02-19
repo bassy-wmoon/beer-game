@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.repository.BelgianBeerRepository">
+    <resultMap id="belgianBeer" type="com.example.demo.model.BelgianBeer">
+        <association property="brewery" javaType="com.example.demo.model.Brewery">
+            <id property="id" column="brewery_id"/>
+            <result property="name" column="name"/>
+        </association>
+        <association property="beer" javaType="com.example.demo.model.Beer">
+            <id property="id" column="beer_id"/>
+            <result property="name" column="name"/>
+            <result property="description" column="description"/>
+            <association property="beerStyle" javaType="com.example.demo.model.BeerStyle">
+                <id property="id" column="beer_style_id"/>
+                <result property="name" column="name"/>
+            </association>
+            <association property="beerPhoto" javaType="com.example.demo.model.BeerPhoto">
+                <id property="id" column="beer_photo_id"/>
+                <result property="url" column="url"/>
+                <result property="width" column="width"/>
+                <result property="height" column="height"/>
+            </association>
+        </association>
+    </resultMap>
+
+    <select id="selectOne" resultMap="belgianBeer">
+        SELECT
+            brewery.brewery_id,
+            brewery.name,
+            beer.beer_id,
+            beer.name,
+            beer.description,
+            style.beer_style_id,
+            style.name,
+            photo.beer_photo_id,
+            photo.url,
+            photo.width,
+            photo.height
+        FROM
+            belgian_beers belgian
+            JOIN breweries brewery 
+                ON belgian.brewery_id = brewery.brewery_id
+            JOIN beers beer
+                ON belgian.beer_id = beer.beer_id
+            JOIN beer_styles style
+                ON beer.style = style.beer_style_id
+            JOIN beer_photos photo
+                ON beer.beer_id = photo.beer_photo_id
+        WHERE
+            brewery.brewery_id = #{breweryId}
+            AND beer.beer_id = #{beerId}
+            AND photo.beer_photo_id = #{photoId}
+    </select>
+</mapper>

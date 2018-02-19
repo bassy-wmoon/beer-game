@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.Beer;
 import com.example.demo.model.BeerPhoto;
+import com.example.demo.model.BelgianBeer;
 import com.example.demo.service.BelgianBeerService;
 
 @RestController
@@ -29,5 +30,10 @@ public class BelgianBeerRestController {
 	@GetMapping(path="/beerPhoto/shuffle")
 	public List<BeerPhoto> getShuffledPhoto() {
 		return belgianBeerService.selectShuffledBeerPhotos();
+	}
+	
+	@GetMapping(path="/belgianBeer/brewery/{breweryId}/beer/{beerId}/photo/{photoId}")
+	public BelgianBeer answer(@PathVariable int breweryId, @PathVariable int beerId, @PathVariable int photoId) {
+		return belgianBeerService.selectBeerByCondition(breweryId, beerId, photoId);
 	}
 }
