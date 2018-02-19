@@ -4,6 +4,7 @@ public class Beer {
 
 	private int id;
 	private String name;
+	private String description;
 	private BeerStyle beerStyle;
 	private BeerPhoto beerPhoto;
 
@@ -21,5 +22,29 @@ public class Beer {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public BeerStyle getBeerStyle() {
+		return beerStyle;
+	}
+
+	public void setBeerStyle(BeerStyle beerStyle) {
+		this.beerStyle = beerStyle;
+	}
+
+	public BeerPhoto getBeerPhoto() {
+		return beerPhoto;
+	}
+
+	public void setBeerPhoto(BeerPhoto beerPhoto) {
+		this.beerPhoto = beerPhoto;
 	}
 }

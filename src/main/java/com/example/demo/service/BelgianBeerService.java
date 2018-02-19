@@ -7,9 +7,11 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.model.Beer;
 import com.example.demo.model.BeerPhoto;
+import com.example.demo.model.BelgianBeer;
 import com.example.demo.model.Brewery;
 import com.example.demo.repository.BeerPhotoRepository;
 import com.example.demo.repository.BeerRepository;
+import com.example.demo.repository.BelgianBeerRepository;
 import com.example.demo.repository.BreweryRepository;
 
 @Service
@@ -18,13 +20,16 @@ public class BelgianBeerService {
 	private BeerPhotoRepository beerPhotoRepository;
 	private BreweryRepository breweryRepository;
 	private BeerRepository beerRepository;
+	private BelgianBeerRepository belgianBeerRepository;
 	
 	public BelgianBeerService(BeerPhotoRepository beerPhotoRepository,
 							  BreweryRepository breweryRepository,
-							  BeerRepository beerRepository) {
+							  BeerRepository beerRepository,
+							  BelgianBeerRepository belgianBeerRepository) {
 		this.beerPhotoRepository = beerPhotoRepository;
 		this.breweryRepository = breweryRepository;
 		this.beerRepository = beerRepository;
+		this.belgianBeerRepository = belgianBeerRepository;
 	}
 	
 	public List<BeerPhoto> selectShuffledBeerPhotos() {
@@ -43,5 +48,9 @@ public class BelgianBeerService {
 	
 	public List<Beer> selectBeersByBrewery(int breweryId) {
 		return beerRepository.selectByBrewery(breweryId);
+	}
+	
+	public BelgianBeer selectBeerByCondition(int breweryId, int beerId, int photoId) {
+		return belgianBeerRepository.selectOne(breweryId, beerId, photoId);
 	}
 }
