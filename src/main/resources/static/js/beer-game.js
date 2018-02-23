@@ -57,12 +57,28 @@ function answer() {
 			alert("Game Over");
 			return;
 		}
-		reset();
-		showPhoto(beerPhotos[index]);
+		show(data);
 	});
 }
 
 function reset() {
+	$("#answer_section").css("display", "block");
+	$("#show_section").css("display", "none");
+	$("#beer_photo").attr("src", "");
 	$("#brewery").val(0);
 	buildSelectBox($("#beer"), []);
+}
+
+function show(data) {
+	$("#answer_section").css("display", "none");
+	$("#brewery_name span").html(data.brewery.name);
+	$("#beer_name span").html(data.beer.name);
+	$("#beer_style span").html(data.beer.beerStyle.name);
+	$("#beer_description span").html(data.beer.description);
+	$("#show_section").css("display", "block");	
+}
+
+function next() {
+	reset();
+	showPhoto(beerPhotos[index]);	
 }
