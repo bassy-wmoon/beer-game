@@ -11,6 +11,6 @@
         FROM
             breweries
         ORDER BY
-            brewery_id
+            name
     </select>
 </mapper>
