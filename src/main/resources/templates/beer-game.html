@@ -2,30 +2,48 @@
 <html>
 <head>
 <meta charset="UTF-8"/>
-<title>Insert title here</title>
+<title>Beer Game</title>
 </head>
 <body>
 <div>
 	<div>
 		<img id="beer_photo" style="float:left;margin:0 20px 20px 20px;" src=""/>
 	</div>
-	<div>
-		<select id="brewery" onchange="findBeersByBrewery()">
-			<option value="0">-</option>
-			<option th:each="brewery:${breweries}" th:value="${brewery.getId()}" th:text="${brewery.getName()}"></option>
-		</select>
-		<select id="beer">
-			<option value="0">-</option>
-		</select>
-	</div>
-	<div>
-	   <button id="answer" onclick="answer();">answer</button>
-	</div>
+	<section id="answer_section">
+	    <div>
+	        <select id="brewery" onchange="findBeersByBrewery()">
+	            <option value="0">-</option>
+	            <option th:each="brewery:${breweries}" th:value="${brewery.getId()}" th:text="${brewery.getName()}"></option>
+	        </select>
+	        <select id="beer">
+	            <option value="0">-</option>
+	        </select>
+	    </div>
+	    <div>
+	       <button id="answer" onclick="answer();">answer</button>
+	    </div>	
+	</section>
+	
+	<section id="show_section" style="display: none;">
+        <div id="brewery_name">
+            <span>brewery_name</span>
+        </div>
+        <div id="beer_name">
+            <span>beer_name</span>
+        </div>
+		<div id="beer_style">
+		    <span>beer_style</span>
+		</div>
+		<div id="beer_description">
+		    <span>beer_description</span>
+		</div>
+	    <div>
+	       <button id="next" onclick="next()">next</button>
+	    </div>
+	</section>
+	
 </div>
 </body>
-<script
-  src="http://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
+<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script src="../js/beer-game.js"></script>
 </html>
