@@ -1,23 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8"/>
-<title>Beer Game</title>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="../css/beer-game.css"/>
+	
+	<title>Beer Game</title>
 </head>
 <body>
-<div>
-	<div>
-		<img id="beer_photo" style="float:left;margin:0 20px 20px 20px;" src=""/>
+<div class="container">
+    <div>
+        <p class="h4">
+        写真を見てブルワリーとビールの組み合わせを当てよう!!
+        </p>
+    </div>
+	<div style="float:left;margin:0 20px 20px 20px;">
+		<img id="beer_photo" src="" class="img-thumbnail" />
 	</div>
 	<section id="answer_section">
 	    <div>
-	        <select id="brewery" onchange="findBeersByBrewery()">
-	            <option value="0">-</option>
-	            <option th:each="brewery:${breweries}" th:value="${brewery.getId()}" th:text="${brewery.getName()}"></option>
-	        </select>
-	        <select id="beer">
-	            <option value="0">-</option>
-	        </select>
+	       <div>
+	            <select id="brewery" onchange="findBeersByBrewery()">
+	                <option value="0">-</option>
+	                <option th:each="brewery:${breweries}" th:value="${brewery.getId()}" th:text="${brewery.getName()}"></option>
+	            </select>
+	       </div>
+	       <div>
+	            <select id="beer">
+	                <option value="0">-</option>
+	            </select>
+	       </div>
 	    </div>
 	    <div>
 	       <button id="answer" onclick="answer();">answer</button>
@@ -41,9 +55,16 @@
 	       <button id="next" onclick="next()">next</button>
 	    </div>
 	</section>
-	
+</div>
+<div class="alert alert-danger text-center" role="alert">
+  incorrect !!
+</div>
+<div class="alert alert-success text-center" role="alert">
+  correct !!
 </div>
 </body>
-<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="../js/beer-game.js"></script>
 </html>

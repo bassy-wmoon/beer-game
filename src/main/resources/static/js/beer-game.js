@@ -49,12 +49,17 @@ function answer() {
 	
 	$.get("/api/belgianBeer/brewery/" + breweryId + "/beer/" + beerId + "/photo/" + photoId, function(data){
 		if (!data) {
-			alert("incorrect");
+			$(".alert-danger").fadeIn(700);
+			$(".alert-danger").fadeOut(700);
 			return;
 		}
-		alert("correct");
+		
+		$(".alert-success").fadeIn(700);
+		$(".alert-success").fadeOut(700);
+
 		if (index >= beerPhotos.length) {
 			alert("Game Over");
+			// 初めから遊ぶリンクつける
 			return;
 		}
 		show(data);
