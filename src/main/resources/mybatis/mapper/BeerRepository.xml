@@ -3,8 +3,8 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.example.demo.repository.BeerRepository">
-    <select id="selectAll" resultType="com.example.demo.model.Beer">
+<mapper namespace="io.github.bassy.wmoon.repository.BeerRepository">
+    <select id="selectAll" resultType="io.github.bassy.wmoon.model.Beer">
         SELECT
             beer_id as id,
             name
@@ -13,7 +13,7 @@
         ORDER BY
             name
     </select>
-    <select id="selectByBrewery" resultType="com.example.demo.model.Beer">
+    <select id="selectByBrewery" resultType="io.github.bassy.wmoon.model.Beer">
         SELECT
             beers.beer_id as id,
             beers.name

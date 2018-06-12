@@ -1,8 +1,9 @@
-package com.example.demo.repository;
+package io.github.bassy.wmoon.repository;
 
-import com.example.demo.model.Brewery;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
+
+import io.github.bassy.wmoon.model.Brewery;
 
 import java.util.List;
 

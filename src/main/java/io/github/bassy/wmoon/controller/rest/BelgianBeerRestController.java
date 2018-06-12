@@ -1,4 +1,4 @@
-package com.example.demo.controller.rest;
+package io.github.bassy.wmoon.controller.rest;
 
 import java.util.List;
 
@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.model.Beer;
-import com.example.demo.model.BeerPhoto;
-import com.example.demo.model.BelgianBeer;
-import com.example.demo.service.BelgianBeerService;
+import io.github.bassy.wmoon.model.Beer;
+import io.github.bassy.wmoon.model.BeerPhoto;
+import io.github.bassy.wmoon.model.BelgianBeer;
+import io.github.bassy.wmoon.service.BelgianBeerService;
 
 @RestController
 @RequestMapping(path="/api")

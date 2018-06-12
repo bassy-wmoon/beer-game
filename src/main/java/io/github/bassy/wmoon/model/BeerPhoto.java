@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package io.github.bassy.wmoon.model;
 
 public class BeerPhoto {
 	

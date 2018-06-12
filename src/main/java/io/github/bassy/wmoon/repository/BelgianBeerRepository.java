@@ -1,10 +1,10 @@
-package com.example.demo.repository;
+package io.github.bassy.wmoon.repository;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
-import com.example.demo.model.BelgianBeer;
+import io.github.bassy.wmoon.model.BelgianBeer;
 
 @Mapper
 @Repository

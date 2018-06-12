@@ -1,18 +1,18 @@
-package com.example.demo.service;
+package io.github.bassy.wmoon.service;
 
 import java.util.Collections;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.example.demo.model.Beer;
-import com.example.demo.model.BeerPhoto;
-import com.example.demo.model.BelgianBeer;
-import com.example.demo.model.Brewery;
-import com.example.demo.repository.BeerPhotoRepository;
-import com.example.demo.repository.BeerRepository;
-import com.example.demo.repository.BelgianBeerRepository;
-import com.example.demo.repository.BreweryRepository;
+import io.github.bassy.wmoon.model.Beer;
+import io.github.bassy.wmoon.model.BeerPhoto;
+import io.github.bassy.wmoon.model.BelgianBeer;
+import io.github.bassy.wmoon.model.Brewery;
+import io.github.bassy.wmoon.repository.BeerPhotoRepository;
+import io.github.bassy.wmoon.repository.BeerRepository;
+import io.github.bassy.wmoon.repository.BelgianBeerRepository;
+import io.github.bassy.wmoon.repository.BreweryRepository;
 
 @Service
 public class BelgianBeerService {
