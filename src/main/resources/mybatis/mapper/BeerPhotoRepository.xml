@@ -3,8 +3,8 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.example.demo.repository.BeerPhotoRepository">
-    <select id="selectAll" resultType="com.example.demo.model.BeerPhoto">
+<mapper namespace="io.github.bassy.wmoon.repository.BeerPhotoRepository">
+    <select id="selectAll" resultType="io.github.bassy.wmoon.model.BeerPhoto">
         SELECT 
             beer_photo_id as id,
             url,
